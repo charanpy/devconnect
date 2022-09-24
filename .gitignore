@@ -3,3 +3,4 @@ catalyst-debug.log
 catalyst.json
 catalyst-config.json
 node_modules
+.env
