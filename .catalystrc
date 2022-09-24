@@ -1,0 +1,29 @@
+{
+  "defaults": {
+    "project": 1,
+    "env": 1
+  },
+  "actives": {
+    "project": 1,
+    "env": 1
+  },
+  "projects": [
+    {
+      "idx": 1,
+      "id": "9044000000003013",
+      "name": "DevConnector",
+      "domain": {
+        "id": "10047661455",
+        "name": "devconnector-789506444.development"
+      },
+      "env": [
+        {
+          "idx": 1,
+          "id": "789506444",
+          "name": "Development",
+          "type": 3
+        }
+      ]
+    }
+  ]
+}

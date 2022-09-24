@@ -1,0 +1,10 @@
+{
+  "functions": {
+    "targets": ["dev_function"],
+    "ignore": [],
+    "source": "functions"
+  },
+  "client": {
+    "source": "dev-client"
+  }
+}
