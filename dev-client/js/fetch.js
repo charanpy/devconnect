@@ -9,10 +9,10 @@ const getHeaders = (method, isImage) => {
   return headers;
 };
 
-// const apiURL = 'http://localhost:3000/server/polls_function/api/v1';
+const apiURL = 'http://localhost:3000/server/polls_function/api/v1';
 
-const apiURL =
-  'https://devconnector-789506444.development.catalystserverless.com/server/polls_function/api/v1';
+// const apiURL =
+//   'https://devconnector-789506444.development.catalystserverless.com/server/polls_function/api/v1';
 
 const request = async (
   endpoint,
