@@ -1,0 +1,78 @@
+<section class="resources">
+  <div class="resource-header">
+    <p>Resources</p>
+    <button class="app-button-sm add-resource-btn">
+      <em class="uil uil-plus mr-sm"></em>ADD
+    </button>
+  </div>
+  <div class="language-container"></div>
+
+  <div class="resource-wrapper"></div>
+
+  <template class="resourceTemplate">
+    <div class="feed resource-feed">
+      <div class="title"></div>
+      <div class="photo">
+        <img src="./assets/images/feed-1.jpg" alt="" />
+      </div>
+
+      <div class="action-button">
+        <div class="interaction-button">
+          <span class="like-count"></span
+          ><span class="like"><em class="uil uil-thumbs-up"></em></span>
+          <a href="#" class="github"><em class="uil uil-github"></em></a>
+          <a href="#" class="website"><em class="uil uil-window"></em></a>
+        </div>
+      </div>
+
+      <div class="caption">
+        <p class="description"></p>
+      </div>
+    </div>
+  </template>
+
+  <section class="popup-g add-resource flex">
+    <div class="close close-add-resource">
+      <em class="uil uil-multiply"></em>
+    </div>
+    <div class="add-container">
+      <form class="add-resource-form flex-col">
+        <input
+          type="text"
+          placeholder="Title"
+          class="app-input resource-title"
+          required
+        />
+        <select class="app-input resource-language">
+          <option value="''">Select</option>
+        </select>
+        <input
+          type="text"
+          placeholder="Description"
+          class="app-input resource-description"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Github"
+          class="app-input resource-github"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Website"
+          class="app-input resource-website"
+          required
+        />
+        <input
+          type="file"
+          accept="image/*"
+          placeholder="Image"
+          class="app-input resource-image"
+          required
+        />
+        <button type="submit" class="app-button">ADD</button>
+      </form>
+    </div>
+  </section>
+</section>

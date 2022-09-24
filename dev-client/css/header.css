@@ -1,0 +1,49 @@
+.appHeader {
+  display: flex;
+  position: fixed;
+  padding: 1.2rem 1rem;
+  z-index: 10;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  background: white;
+  border-bottom: 1px solid var(--slate-300);
+}
+
+.hamburger {
+  display: none;
+}
+
+.appHeader h1 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--slate-900);
+}
+
+.appHeader__profile {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.appHeader__search {
+  padding: 0.5rem;
+  background: #e5e7eb;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  width: 250px;
+  margin-right: 19px;
+}
+
+.appHeader__container {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 767px) {
+  .hamburger {
+    display: flex;
+  }
+}

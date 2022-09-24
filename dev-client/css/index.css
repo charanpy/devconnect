@@ -1,0 +1,55 @@
+.app-main__chip {
+  display: flex;
+}
+
+.app-main__chip button {
+  min-width: 70px;
+  padding: 0.5rem;
+  border-radius: 50px;
+  background: var(--slate-300);
+  color: black;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.active {
+  color: white !important;
+  background: #22c55e !important;
+}
+
+.app-add {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  transform: scale(0);
+  transition: all 500ms linear;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-container {
+  border-radius: 5px;
+  min-width: 200px;
+
+  background: white;
+  color: var(--slate-900);
+  padding: 1rem;
+  margin: 20px 0;
+}
+
+.project-form,
+.post-form,
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.post-form {
+  display: none;
+}

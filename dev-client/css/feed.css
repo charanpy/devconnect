@@ -1,0 +1,121 @@
+.feed {
+  background: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  width: 300px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  gap: 15px;
+}
+
+.profile-pic img,
+.comment-profile img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.feed .user,
+.comment-user {
+  display: flex;
+  gap: 1rem;
+}
+
+.photo img {
+  height: 200px;
+  width: 270px;
+  margin-top: 10px;
+  border-radius: 3px;
+  object-fit: cover;
+}
+.feed .action-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  margin: 0.6rem;
+}
+
+.liked-by {
+  display: flex;
+}
+
+.liked-by span {
+  width: 1.4rem;
+  height: 1.4rem;
+  display: block;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid var(--color-white);
+  margin-left: -0.6rem;
+}
+
+.liked-by span:first-child {
+  margin: 0;
+}
+
+.liked-by p {
+  margin-left: 0.5rem;
+}
+
+.feeds {
+  display: flex;
+  flex-wrap: wrap;
+  /* margin-right: 25%; */
+  align-items: center;
+  gap: 15px;
+  /* justify-content: space-between; */
+}
+
+.caption p {
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.info h3,
+.comment-info h3 {
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.comment-container {
+  padding: 2rem 1rem 2rem 2rem;
+  background: white;
+  min-width: 300px;
+  border-radius: 8px;
+  flex-direction: column !important;
+  justify-content: space-between;
+}
+
+.add-comment {
+  margin-top: 20px;
+}
+
+.add-comment input {
+  width: 80%;
+}
+.comment-user {
+  margin: 20px 0;
+}
+.add-comment em {
+  color: crimson;
+}
+/* @media (max-width: 1000px) {
+  .feeds {
+    margin-right: 0%;
+  }
+
+  .feed {
+    width: 40%;
+  }
+}
+
+ */
+
+@media (max-width: 767px) {
+  .feeds {
+    justify-content: center;
+  }
+}

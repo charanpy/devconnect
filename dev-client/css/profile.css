@@ -1,0 +1,43 @@
+.profile-container {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 20px 0px;
+}
+
+.trash {
+  color: red;
+  display: none;
+}
+.profile-card {
+  padding: 1rem 2rem;
+  width: fit-content;
+  background: white;
+  border-radius: 5px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  height: fit-content;
+  margin-right: 20px;
+  width: 300px;
+}
+
+.profile-link em {
+  color: crimson;
+  margin-right: 10px;
+}
+
+.bio {
+  margin: 20px 0;
+  line-height: 1.9;
+}
+
+@media (max-width: 767px) {
+  .profile-card {
+    width: 100%;
+  }
+}

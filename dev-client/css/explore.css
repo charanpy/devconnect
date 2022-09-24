@@ -1,0 +1,11 @@
+.explore {
+  padding: 1rem;
+}
+
+.explore-input {
+  background: white;
+  border-radius: 5px;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: fit-content;
+}

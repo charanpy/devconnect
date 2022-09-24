@@ -1,0 +1,97 @@
+<section class="app-main__chip">
+  <button class="active project-chip">Projects</button>
+  <button class="post-chip">Posts</button>
+</section>
+<input type="hidden" class="fetchProject" />
+<section class="feeds">
+  <template class="projectTemplate">
+    <div class="feed">
+      <div class="user">
+        <div class="profile-pic">
+          <img src="./assets/images/profile-14.jpg" alt="" />
+        </div>
+        <div class="info">
+          <h3></h3>
+          <small></small>
+        </div>
+      </div>
+
+      <div class="photo">
+        <img src="./assets/images/feed-1.jpg" alt="" />
+      </div>
+
+      <div class="action-button">
+        <div class="interaction-button">
+          <span class="like-count"></span
+          ><span class="like"><em class="uil uil-thumbs-up"></em></span>
+          <span class="comment-btn"><em class="uil uil-comment"></em></span>
+          <span><em class="uil uil-share"></em></span>
+        </div>
+      </div>
+
+      <div class="caption">
+        <p class="description"></p>
+      </div>
+      <section class="comments popup-g flex">
+        <div class="close close-comment">
+          <em class="uil uil-multiply"></em>
+        </div>
+        <div class="comment-container">
+          <div class="comments-wrapper">
+            <template class="commentTemplate">
+              <div class="comment-user">
+                <div class="comment-profile">
+                  <img src="./assets/images/profile-14.jpg" alt="" />
+                </div>
+                <div class="comment-info">
+                  <h3>Lana Rose</h3>
+                  <small>Hey</small>
+                </div>
+              </div>
+            </template>
+          </div>
+          <div class="add-comment">
+            <input
+              type="text"
+              placeholder="Add Comment"
+              class="app-input mr-sm comment-input"
+            />
+            <em class="uil uil-message send"></em>
+          </div>
+        </div>
+      </section>
+    </div>
+  </template>
+</section>
+<!-- <section class="app-resources">
+  <div class="app-resources__header">
+    <h1>Resources</h1>
+  </div>
+  <div class="line"></div>
+    <div class="column">
+            <div class=" logo-item">
+      <img src="./assets/logo/java-logo.png" alt="java" class="logo-item-img flex-item">
+      <div class="logo-item-desc  flex-item">Learn Java<br>@java_programming<br>#java</div>
+  </div>
+  <div class="line"></div>
+
+  <div class="logo-item">
+    <img src="./assets/logo/js-logo.png" alt="js" class="logo-item-img flex-item">
+    <div class="logo-item-desc  flex-item">Learn Java-Script<br>@JSprogramming<br>#java_script</div>
+  </div>
+   <div class="line"></div>
+
+  <div class="logo-item">
+    <img src="./assets/logo/react.png" alt="js" class="logo-item-img flex-item">
+    <div class="logo-item-desc  flex-item">Learn React<br>@reactprogramming<br>#react</div>
+  </div>
+   <div class="line"></div>
+
+  <div class="logo-item">
+    <img src="./assets/logo/python.png" alt="js" class="logo-item-img flex-item">
+    <div class="logo-item-desc  flex-item">Learn Python<br>@pythonprogramming<br>#python</div>
+  </div>
+   <div class="line"></div>
+
+
+</section> -->

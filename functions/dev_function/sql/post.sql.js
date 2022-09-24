@@ -1,0 +1,15 @@
+const getPostSQL =
+  // 'SELECT POST.*,PROFILE.user_id,PROFILE.email,PROFILE.username FROM POST JOIN PROFILE ON POST.user_id=PROFILE.ROWID';
+  `SELECT POST.description,POST.ROWID,POST.CREATEDTIME,POST.user_id,POST.media,POST.tags,PROFILE.media,PROFILE.username,COUNT(LIKES.ROWID) FROM POST 
+    JOIN PROFILE ON POST.user_id = PROFILE.ROWID LEFT JOIN LIKES ON LIKES.post_id=POST.ROWID 
+    GROUP BY POST.CREATEDTIME,POST.description,POST.ROWID,POST.user_id,POST.media,POST.tags,PROFILE.media,PROFILE.username`;
+
+const getUserPost = (userId = '9044000000014072') =>
+  `SELECT POST.CREATEDTIME,POST.description,POST.ROWID,POST.user_id,POST.media,POST.tags,PROFILE.media,PROFILE.username,COUNT(LIKES.ROWID) FROM POST 
+    JOIN PROFILE ON POST.user_id = PROFILE.ROWID LEFT JOIN LIKES ON LIKES.post_id=POST.ROWID 
+    WHERE POST.user_id=${userId} GROUP BY  POST.CREATEDTIME,POST.description,POST.ROWID,POST.user_id,POST.media,POST.tags,PROFILE.media,PROFILE.username`;
+
+module.exports = {
+  getPostSQL,
+  getUserPost,
+};

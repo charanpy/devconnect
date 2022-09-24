@@ -1,0 +1,128 @@
+<section class="profile-container">
+<section class="flex">
+  <figure class="profile-card">
+    <div class="flex">
+      <img src="./assets/images/profile.jpg" class="profile-img" alt="profile" />
+    </div>
+    <figcaption>
+      <div class="profile-link flex ">
+        <a class="github"> <em class="uil uil-github"></em></a>
+        <a class="website"> <em class="uil uil-window"></em></a>
+        <a class="edit none"><em class="uil uil-edit"></em></a>
+      </div>
+      <div class="bio">
+        <p class="name"></p>
+        <p class="email"></p>
+        <p class="title"></p>
+        <p class="description"></p>
+        <p class="skill"></p>
+        <p class="country"></p>
+      </div>
+    </figcaption>
+  </figure>
+  </section>
+
+  <section class="popup-g edit-profile flex">
+    <div class="close close-edit">
+      <em class="uil uil-multiply"></em>
+    </div>
+    <div class="add-container">
+      <form class="edit-form">
+        <label>Username</label>
+        <input  type="text" placeholder="Username" class="edit-name app-input" />
+        <label>Title</label>
+        
+        <input  type="text" placeholder="Title" class="edit-title app-input" />
+        <label>Description</label>
+
+        <input  type="text" placeholder="Description" class="edit-description app-input" />
+        <label>Github</label>
+
+        <input  type="text" placeholder="Github" class="edit-github app-input" />
+        <label>Website</label>
+
+        <input  type="text" placeholder="Website" class="edit-website app-input" />
+        <label>Skill</label>
+
+        <input type="text" placeholder="Skill" class="edit-skill app-input" />
+        <label>Country</label>
+
+        <input type="text" placeholder="Country" class="edit-country app-input" />
+
+        <input type="file" accept="image/*"  class="edit-image app-input" />
+        <button class="app-button" type="submit">EDIT</button>
+      </form>
+    </div>
+  </section>
+
+  <div class="flex-col">
+     <section class="app-main__chip">
+    <button class="active project-chip">Projects</button>
+    <button class="post-chip">Posts</button>
+  </section>
+  <input type="hidden" class="fetchProject" />
+  <section class="feeds">
+    <template class="projectTemplate">
+      <div class="feed">
+        <div class="user">
+          <div class="profile-pic">
+            <img src="./assets/images/profile-14.jpg" alt="" />
+          </div>
+          <div class="info">
+            <h3>Lana Rose</h3>
+            <small>Dubai, 15 MINUTES AGO</small>
+          </div>
+        </div>
+
+        <div class="photo">
+          <img src="./assets/images/feed-1.jpg" alt="" />
+        </div>
+
+        <div class="action-button">
+          <div class="interaction-button">
+            <span class="like-count"></span
+            ><span class="like"><em class="uil uil-thumbs-up"></em></span>
+            <span class="comment-btn"><em class="uil uil-comment"></em></span>
+           
+            <span class="trash"> <i class="uil uil-trash"></i></span>
+          </div>
+        </div>
+
+        <div class="caption">
+          <p class="description"></p>
+        </div>
+        <section class="comments popup-g flex">
+          <div class="close close-comment">
+            <em class="uil uil-multiply"></em>
+          </div>
+          <div class="comment-container">
+            <div class="comments-wrapper">
+              <template class="commentTemplate">
+                <div class="comment-user">
+                  <div class="comment-profile">
+                    <img src="./assets/images/profile-14.jpg" alt="" />
+                  </div>
+                  <div class="comment-info">
+                    <h3>Lana Rose</h3>
+                    <small>Hey</small>
+                  </div>
+                </div>
+              </template>
+            </div>
+            <div class="add-comment">
+              <input
+                type="text"
+                placeholder="Add Comment"
+                class="app-input mr-sm comment-input"
+              />
+              <em class="uil uil-message send"></em>
+            </div>
+          </div>
+        </section>
+      </div>
+    </template>
+  </section>
+</section>
+
+  </div>
+</section>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>client</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./css/base.css"
+    />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./css/feed.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./css/explore.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./css/profile.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./css/resource.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./css/index.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./css/nav.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="./css/header.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css"
+    />
+  </head>
+
+  <body onload="checkAuth()">
+    <header class="appHeader">
+      <h1 class="flex">
+        <em class="uil uil-bars mr-sm hamburger"></em>
+        <img
+          src="./assets/logo/logo.png"
+          width="35px"
+          height="35px"
+          class="mr-sm"
+          alt="logo"
+        />
+      </h1>
+      <div class="appHeader__container">
+        <em class="uil uil-plus-circle mr-small add-btn"></em>
+        <em class="uil uil-search mr-small search-header"></em>
+        <img
+          src="./assets/images/profile.jpg"
+          alt="user-peofile"
+          class="appHeader__profile"
+        />
+      </div>
+    </header>
+    <div class="loader-container flex flex-col">
+      <div class="loader"></div>
+      <p>Loading ...</p>
+    </div>
+    <nav class="appNav">
+      <section>
+        <div class="appNav__header-container">
+          <p class="appNav__header">MENU</p>
+          <div class="close-nav">
+            <em class="uil uil-multiply"></em>
+          </div>
+        </div>
+        <ul class="appNav__list">
+          <li onclick="route('/app/')" id="home" class="active-nav">
+            <em class="uil uil-home appNav__item-icon"></em>
+            <span class="appNav__item">Home</span>
+          </li>
+          <li onclick="route('/app/explore')" id="explore">
+            <em class="uil uil-compass appNav__item-icon"></em>
+            <span class="appNav__item">Explore</span>
+          </li>
+          <li onclick="route('/app/chat')" id="chat">
+            <em class="uil uil-envelope appNav__item-icon"></em>
+            <span class="appNav__item">Chat</span>
+          </li>
+          <li onclick="route('/app/resource')" id="resource">
+            <em class="uil uil-brackets-curly appNav__item-icon"></em>
+
+            <span class="appNav__item">Resource</span>
+          </li>
+          <li onclick="route('/app/profile')" id="profile">
+            <em class="uil uil-user appNav__item-icon"></em>
+            <span class="appNav__item">Profile</span>
+          </li>
+        </ul>
+      </section>
+      <button class="logout">
+        <em class="uil uil-sign-out-alt"></em>
+        LOGOUT
+      </button>
+    </nav>
+    <main class="app-container app-main" id="main-page"></main>
+
+    <section class="app-add">
+      <div class="close-g close-add">
+        <em class="uil uil-multiply"></em>
+      </div>
+      <div class="add-container">
+        <section class="app-main__chip">
+          <button class="active add-project-chip">Projects</button>
+          <button class="add-post-chip">Posts</button>
+        </section>
+
+        <form class="post-form">
+          <input
+            type="text"
+            class="app-input post-description"
+            placeholder="Description"
+          />
+          <input
+            type="text"
+            class="app-input post-tags"
+            placeholder="Tags Ex react,angular"
+          />
+          <input
+            type="file"
+            class="app-input post-image"
+            placeholder="Description"
+          />
+          <button class="app-button" type="submit">SUBMIT</button>
+        </form>
+
+        <form class="project-form">
+          <input
+            type="text"
+            class="app-input project-title"
+            placeholder="Title"
+          />
+          <input
+            type="text"
+            class="app-input project-description"
+            placeholder="Description"
+          />
+          <input
+            type="text"
+            class="app-input project-website"
+            placeholder="Website"
+          />
+          <input
+            type="text"
+            class="app-input project-github"
+            placeholder="Github"
+          />
+          <input
+            type="text"
+            class="app-input project-tags"
+            placeholder="Tags Ex react,angular"
+          />
+          <input
+            type="file"
+            class="app-input project-image"
+            placeholder="Description"
+          />
+          <button class="app-button" type="submit">SUBMIT</button>
+        </form>
+      </div>
+    </section>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        try {
+          localStorage.setItem('projects', JSON.stringify('[]'));
+          localStorage.setItem('posts', JSON.stringify('[]'));
+        } catch (error) {
+        } finally {
+        }
+      });
+    </script>
+    <script src="./components/toaster/index.js"></script>
+    <script src="https://static.zohocdn.com/catalyst/sdk/js/2.0.0/catalystWebSDK.js"></script>
+    <script src="/__catalyst/sdk/init.js"></script>
+    <script src="./js/checkAuth.js"></script>
+    <script src="./main.js"></script>
+    <script src="./route.js"></script>
+    <script src="./js/fetch.js"></script>
+  </body>
+</html>

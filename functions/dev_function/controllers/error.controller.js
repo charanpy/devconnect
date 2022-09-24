@@ -98,6 +98,10 @@ const errorController = (err, req, res, next) => {
   if (catalystError?.startsWith?.('AUTHENTICATION_FAILURE')) {
     error = handleAuthCatalyst();
   }
+
+  if (catalystError?.startsWith?.('MANDATORY_MISSING')) {
+    error = new AppError('Please fill all required fields', 400);
+  }
   sendError(error, res);
 };
 

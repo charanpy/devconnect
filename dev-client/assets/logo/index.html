@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="./register.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css"/>
+    <script src="https://static.zohocdn.com/catalyst/sdk/js/2.0.0/catalystWebSDK.js"></script>
+    <script src="/__catalyst/sdk/init.js"></script>
+  
+    <title>Signup</title>
+  </head>
+  <body>
+    
+    <div class="image-back">
+      <div class="image-over">
+        <div class="top-text">
+          <h1 class="text">Connect with DevConnecter<span><i class="uil uil-arrow"></i></span></h1><br>
+        </div>
+    <main class="wrapper">
+      <div class="header">
+        <h2>Create Your Account</h2>
+      </div>
+      <form id="signupForm" class="form">
+        <div class="form-control">
+          <input
+            type="text"
+            placeholder="Enter Username"
+            id="username"
+            required
+          />
+        </div>
+        <div class="form-control">
+          <input type="email" placeholder="Enter email" id="email" required />
+        </div>
+
+        <button>SIGNUP<i class="uil uil-angle-double-right"></i></button>
+      </form>
+
+      <p class="login">Have An Account? Login<i class="uil uil-angle-double-right"></i></p>
+
+      <section class="popup popup-center">
+        <div class="close">X</div>
+
+        <div class="login-card" id="login"></div>
+      </section>
+    </main>
+  </div>
+  </div>
+    <script src="../components/toaster/index.js"></script>
+    <script src="../js/fetch.js"></script>
+    <script src="./register.js"></script>
+  </body>
+</html>
