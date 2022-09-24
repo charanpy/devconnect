@@ -11,7 +11,7 @@ const checkAuth = require('../lib/middlewares/auth.middleware');
 const router = express.Router();
 
 router.route('/').post(checkAuth, upload().single('image'), addResource);
-router.route('/vote/:resourceId').post(toggleVoteResource);
-router.route('/language').get(getLanguages);
-router.route('/:languageId').get(getResource);
+router.route('/vote/:resourceId').post(checkAuth, toggleVoteResource);
+router.route('/language').get(checkAuth, getLanguages);
+router.route('/:languageId').get(checkAuth, getResource);
 module.exports = router;

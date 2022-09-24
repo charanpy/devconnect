@@ -1,7 +1,7 @@
 const getLocImage = (url) => {
-  if (!url) return './assets/images/profile-14.jpg';
+  if (!url) return './assets/images/profile.jpg';
   const [file, folder] = url?.split(' ');
-  if (!file || !folder) return './assets/images/profile-14.jpg';
+  if (!file || !folder) return './assets/images/profile.jpg';
 
   return `/baas/v1/project/9044000000003013/folder/${file}/file/${folder}/download`;
 };

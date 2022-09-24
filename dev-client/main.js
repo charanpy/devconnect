@@ -60,10 +60,13 @@
     formData.append('tags', tags);
     formData.append('image', image);
 
-    fetch('http://localhost:3000/server/polls_function/api/v1/post', {
-      method: 'POST',
-      body: formData,
-    })
+    fetch(
+      'https://devconnector-789506444.development.catalystserverless.com/server/polls_function/api/v1/post',
+      {
+        method: 'POST',
+        body: formData,
+      }
+    )
       .then((res) => {
         console.log(res);
         showToaster('Added Post', true);
@@ -104,10 +107,13 @@
     formData.append('github', github);
     formData.append('image', image);
 
-    fetch('http://localhost:3000/server/polls_function/api/v1/project', {
-      method: 'POST',
-      body: formData,
-    })
+    fetch(
+      'https://devconnector-789506444.development.catalystserverless.com/server/polls_function/api/v1/project',
+      {
+        method: 'POST',
+        body: formData,
+      }
+    )
       .then((res) => {
         console.log(res);
         showToaster('Added Project', true);

@@ -175,6 +175,7 @@
       if (currentState === '/app/explore') return;
       let projects;
       document.querySelector('.feeds').innerHTML = '';
+      console.log(currentState);
       if (currentState !== '/app/profile') {
         projects = JSON.parse(localStorage.getItem('projects') || '[]');
         if (!projects || !projects?.length || projects === '[]')

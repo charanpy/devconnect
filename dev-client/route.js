@@ -121,3 +121,7 @@ function formatDate(date) {
     return '';
   }
 }
+
+document.querySelector('.appHeader__profile').addEventListener('click', (e) => {
+  handleLocation(e, '/app/profile');
+});

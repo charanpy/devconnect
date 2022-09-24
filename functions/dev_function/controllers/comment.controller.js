@@ -11,7 +11,7 @@ const addCommentToProject = catchAsync(async (req, res, next) => {
 
   const newComment = await dataStore.insertRow({
     comment,
-    user_id: req?.user?.id,
+    user_id: req?.user?.user_id,
     project_id: req?.params?.projectId,
   });
 
@@ -27,7 +27,7 @@ const addCommentToPost = catchAsync(async (req, res, next) => {
 
   const newComment = await dataStore.insertRow({
     comment,
-    user_id: req?.user?.id,
+    user_id: req?.user?.user_id,
     post_id: req?.params?.postId,
   });
 

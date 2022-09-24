@@ -55,6 +55,8 @@
 }
 .resource-wrapper {
   margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .column {

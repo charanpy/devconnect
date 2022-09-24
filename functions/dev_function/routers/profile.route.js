@@ -12,12 +12,9 @@ const router = express.Router();
 
 router
   .route('/')
-  .get(getProfiles)
+  .get(checkAuth, getProfiles)
   .patch(checkAuth, upload().single('image'), editProfile);
-router.route('/me').get(checkAuth, getMe);
-router
-  .route('/:profileId')
-
-  .get(getProfileById);
+router.route('/me').get(checkAuth, checkAuth, getMe);
+router.route('/:profileId').get(checkAuth, getProfileById);
 
 module.exports = router;

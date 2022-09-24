@@ -1,15 +1,17 @@
 const express = require('express');
 const catalyst = require('zcatalyst-sdk-node');
 require('dotenv').config();
+const cors = require('cors');
 
 const app = express();
 
 app.use(express.json({ limit: '50mb' }));
+app.use(cors({ origin: '*' }));
 
 app.use((req, res, next) => {
   const initializeCatalyst = catalyst.initialize(req);
   req.catalyst = initializeCatalyst;
-  req.user = { id: '9044000000012279' };
+  // req.user = { id: '9044000000012279' };
   next();
 });
 

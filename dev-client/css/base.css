@@ -13,6 +13,10 @@ button {
   border: none;
   cursor: pointer;
 }
+em,
+.appHeader__profile {
+  cursor: pointer;
+}
 
 .toaster {
   position: absolute;

@@ -14,9 +14,9 @@ const { getPostSQL, getUserPost } = require('../sql/post.sql');
 const createPost = catchAsync(async (req, res, next) => {
   const { tags, description } = req?.body || {};
 
-  console.log(req?.body, req?.file);
+  console.log(req?.body, req?.file, 888);
 
-  if (!req?.user?.id || !tags || !description || !req.file)
+  if (!req?.user?.user_id || !tags || !description || !req.file)
     return next(new AppError('Please fill all fields', 400));
 
   const media = await uploadFileToCatalyst(req, process.env.PROJECT_FILE_ID);
@@ -24,7 +24,7 @@ const createPost = catchAsync(async (req, res, next) => {
   const project = req.catalyst.datastore().table('Post');
 
   const result = await project.insertRow({
-    user_id: req?.user?.id,
+    user_id: req?.user?.user_id,
     media: media,
     tags,
     description,
@@ -45,7 +45,7 @@ const updatePost = catchAsync(async (req, res, next) => {
   const zcql = req.catalyst.zcql();
 
   const post = await zcql.executeZCQLQuery(
-    selectQuerySQL('POST', req?.params?.postId)
+    selectQuerySQL('POST', req?.params?.postId, req?.user?.user_id)
   );
 
   if (!post || !post?.length)
@@ -59,7 +59,13 @@ const updatePost = catchAsync(async (req, res, next) => {
     );
   }
   const updatedPost = await zcql.executeZCQLQuery(
-    updateQuerySQL('POST', req?.params?.postId, req?.body, 'ROWID')
+    updateQuerySQL(
+      'POST',
+      req?.params?.postId,
+      req?.body,
+      'ROWID',
+      req?.user?.user_id
+    )
   );
   return res.status(200).json(updatedPost);
 });

@@ -14,7 +14,8 @@ const register = catchAsync(async (req, res, next) => {
     {
       platform_type: 'web',
       zaid: 10047661455,
-      redirect_url: 'http://localhost:3000/app/',
+      redirect_url:
+        'https://devconnector-789506444.development.catalystserverless.com/app/',
     },
     { last_name: username, email_id: email, first_name: username }
   );

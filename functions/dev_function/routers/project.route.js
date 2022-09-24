@@ -15,16 +15,16 @@ const router = express.Router();
 
 router
   .route('/')
-  .post(upload().single('image'), createProject)
-  .get(getProjects);
+  .post(checkAuth, upload().single('image'), createProject)
+  .get(checkAuth, getProjects);
 
-router.route('/search').get(searchProject);
+router.route('/search').get(checkAuth, searchProject);
 router.route('/user/:userId').get(checkAuth, getUserProjects);
 
 router
   .route('/:projectId')
-  .get(getProjectById)
-  .patch(upload().single('image'), updateProject)
+  .get(checkAuth, getProjectById)
+  .patch(checkAuth, upload().single('image'), updateProject)
   .delete(checkAuth, deleteProjectById);
 
 module.exports = router;

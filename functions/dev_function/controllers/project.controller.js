@@ -18,18 +18,21 @@ const {
 const createProject = catchAsync(async (req, res, next) => {
   const { tags, description, project_title, website, github } = req?.body || {};
 
-  console.log(req?.body, 2, req?.file, 2, req?.files);
-  if (!req?.user?.id || !tags || !description || !project_title || !req.file)
+  if (
+    !req?.user?.user_id ||
+    !tags ||
+    !description ||
+    !project_title ||
+    !req.file
+  )
     return next(new AppError('Please fill all fields', 400));
 
-  console.log('Before');
   const media = await uploadFileToCatalyst(req, process.env.PROJECT_FILE_ID);
-  // console.log(media, 'Medi');
 
   const project = req.catalyst.datastore().table('Project');
 
   const result = await project.insertRow({
-    user_id: req?.user?.id,
+    user_id: req?.user?.user_id,
     media,
     tags,
     description,
@@ -45,7 +48,7 @@ const updateProject = catchAsync(async (req, res, next) => {
   const zcql = req.catalyst.zcql();
 
   const project = await zcql.executeZCQLQuery(
-    getProjectSQL(req?.params?.projectId)
+    getProjectSQL(req?.params?.projectId, req?.user?.user_id)
   );
 
   if (!project) return next(new AppError('No Project Found', 404));
@@ -60,7 +63,7 @@ const updateProject = catchAsync(async (req, res, next) => {
   req.body['ROWID'] = req?.params?.projectId;
 
   const updatedProject = await zcql.executeZCQLQuery(
-    updateProjectSQL(req?.params?.projectId, req?.body)
+    updateProjectSQL(req?.params?.projectId, req?.body, req?.user?.user_id)
   );
   return res.status(200).json(updatedProject);
 });
